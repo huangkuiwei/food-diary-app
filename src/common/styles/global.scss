@@ -1,0 +1,16 @@
+// uni-ui 样式
+// APP需要单独引入字体
+// #ifdef APP-PLUS
+@font-face {
+  font-family: 'uniicons';
+  src: url('./static/font/uniicons.ttf') format('truetype');
+}
+
+.uniicons {
+  font-family: 'uniicons' !important;
+  vertical-align: middle;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+// #endif
