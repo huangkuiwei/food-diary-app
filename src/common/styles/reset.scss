@@ -1,7 +1,3 @@
-page {
-  line-height: 1;
-}
-
 view,
 scroll-view,
 swiper,
@@ -40,6 +36,7 @@ open-data,
 web-view,
 ad {
   box-sizing: border-box;
+  line-height: 1;
 }
 
 image {

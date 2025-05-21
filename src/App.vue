@@ -1,4 +1,6 @@
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'app',
 
@@ -6,6 +8,10 @@ export default {
 
   data() {
     return {};
+  },
+
+  methods: {
+    ...mapMutations('app', ['_setSystemInfo']),
   },
 
   onLaunch() {
@@ -34,7 +40,7 @@ export default {
     });
 
     // 获取系统信息
-    let systemInfo = uni.getSystemInfoSync();
+    let systemInfo = uni.getDeviceInfo();
     this._setSystemInfo(systemInfo);
   },
 };
