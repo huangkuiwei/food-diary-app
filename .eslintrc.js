@@ -4,6 +4,7 @@ module.exports = {
     node: true,
   },
   extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  ignorePatterns: ['node_modules/', 'dist/', 'build/', 'src/uni_modules'],
   parserOptions: {
     parser: 'babel-eslint',
   },
