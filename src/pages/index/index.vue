@@ -14,14 +14,25 @@
         </view>
 
         <view class="right">
-          <view class="item">
-            <text>30天</text>
-            <text>计划倒计时</text>
+          <view class="detail" v-if="markPlan">
+            <view class="item">
+              <text>30天</text>
+              <text>计划倒计时</text>
+            </view>
+
+            <view class="item">
+              <text>55KG</text>
+              <text>目标体重</text>
+            </view>
           </view>
 
-          <view class="item">
-            <text>55KG</text>
-            <text>目标体重</text>
+          <view class="mark-plan" v-else>
+            <text class="add-icon">+</text>
+            <text class="add-text">创建计划</text>
+            <view class="tip">
+              <text>科学合理的计划</text>
+              <text>是减脂成功的第一步哦</text>
+            </view>
           </view>
         </view>
       </view>
@@ -33,11 +44,14 @@
             <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/home/tip-btn.png" />
           </view>
 
-          <!-- TODO 进度环 -->
-          <view class="progress-chart"></view>
-
           <view class="current">当前</view>
           <view class="target">目标</view>
+        </view>
+
+        <view class="progress-chart">
+          <view style="width: 750rpx">
+            <l-echart ref="chartRef" @finished="init" />
+          </view>
         </view>
       </view>
     </view>
@@ -119,8 +133,90 @@
 </template>
 
 <script>
+import * as echarts from '@/uni_modules/lime-echart/static/echarts.min';
+
 export default {
   name: 'indexPage',
+
+  data() {
+    return {
+      markPlan: false,
+      option: {
+        series: [
+          {
+            type: 'gauge',
+            startAngle: 210,
+            endAngle: -30,
+            min: 0,
+            max: 100,
+            splitNumber: 12,
+            itemStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {
+                  offset: 0,
+                  color: '#C2F25E', // 起始颜色
+                },
+                {
+                  offset: 1,
+                  color: '#E4F9BC', // 结束颜色
+                },
+              ]),
+              shadowColor: 'transparent',
+              shadowBlur: 10,
+              shadowOffsetX: 2,
+              shadowOffsetY: 2,
+            },
+            progress: {
+              show: true,
+              roundCap: true,
+              width: 16,
+            },
+            pointer: {
+              show: false,
+            },
+            axisLine: {
+              roundCap: true,
+              lineStyle: {
+                width: 16,
+                color: [[1, '#E5FCB9']],
+              },
+            },
+            radius: '100%',
+            axisTick: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+            axisLabel: {
+              show: false,
+            },
+            title: {
+              show: false,
+            },
+            detail: {
+              show: false,
+            },
+            data: [
+              {
+                value: 20,
+              },
+            ],
+          },
+        ],
+      },
+    };
+  },
+
+  onLoad() {},
+
+  methods: {
+    async init() {
+      // chart 图表实例不能存在data里
+      const chart = await this.$refs.chartRef.init(echarts);
+      chart.setOption(this.option);
+    },
+  },
 };
 </script>
 
@@ -179,29 +275,74 @@ export default {
         width: 240rpx;
         height: 240rpx;
         border-radius: 20rpx;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 44rpx;
 
-        .item {
+        .detail {
+          width: 100%;
+          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          gap: 44rpx;
 
-          text {
-            &:nth-child(1) {
-              font-size: 28rpx;
-              color: #111111;
-              font-weight: 500;
-              margin-bottom: 16rpx;
+          .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text {
+              &:nth-child(1) {
+                font-size: 28rpx;
+                color: #111111;
+                font-weight: 500;
+                margin-bottom: 16rpx;
+              }
+
+              &:nth-child(2) {
+                font-size: 22rpx;
+                color: #999999;
+              }
             }
+          }
+        }
 
-            &:nth-child(2) {
-              font-size: 22rpx;
-              color: #999999;
+        .mark-plan {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 24rpx;
+
+          .add-icon {
+            background: #bef054;
+            border-radius: 50%;
+            width: 39rpx;
+            height: 39rpx;
+            font-size: 28rpx;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .add-text {
+            font-size: 28rpx;
+            color: #111111;
+          }
+
+          .tip {
+            font-size: 22rpx;
+            color: #999999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text {
+              line-height: 29rpx;
             }
           }
         }
@@ -210,6 +351,7 @@ export default {
 
     .progress-container {
       padding: 64rpx 68rpx 0;
+      position: relative;
 
       .progress {
         position: relative;
@@ -254,6 +396,15 @@ export default {
             right: 0;
           }
         }
+      }
+
+      .progress-chart {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
       }
     }
   }
