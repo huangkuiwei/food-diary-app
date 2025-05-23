@@ -40,12 +40,14 @@
         </view>
       </view>
 
-      <view class="recode-box">
+      <view class="recode-box" v-if="!modify">
+        <view class="toggle-btn" @click="modify = !modify">修改碳蛋腊比例</view>
+
         <view class="title">每日饮食记录</view>
         <view class="used">已摄入：310千卡</view>
 
         <view class="recode-list">
-          <view v-for="(item, index) in reocedList" :key="index">
+          <view v-for="(item, index) in recodeList" :key="index">
             <image mode="heightFix" :src="item.icon" />
             <text class="text">{{ item.text }}</text>
             <text v-if="item.active" class="line"></text>
@@ -72,6 +74,69 @@
             <text>50克</text>
             <text>100千卡</text>
           </view>
+        </view>
+      </view>
+
+      <view class="modify-ratio" v-else>
+        <view class="toggle-btn" @click="modify = !modify">修改碳蛋腊比例</view>
+
+        <view class="title">修改碳蛋脂比例</view>
+
+        <view class="ratio-list">
+          <view class="ratio-item">
+            <view class="ratio-tip">
+              <text>碳水化合物</text>
+              <text>15%</text>
+            </view>
+
+            <slider
+              value="60"
+              activeColor="#78F788"
+              backgroundColor="#78F78815"
+              :block-size="20"
+              :min="0"
+              :max="100"
+              :step="1"
+            />
+          </view>
+
+          <view class="ratio-item">
+            <view class="ratio-tip">
+              <text>蛋白质</text>
+              <text>51%</text>
+            </view>
+
+            <slider
+              value="60"
+              activeColor="#FF7542"
+              backgroundColor="#FF754215"
+              :block-size="20"
+              :min="0"
+              :max="100"
+              :step="1"
+            />
+          </view>
+
+          <view class="ratio-item">
+            <view class="ratio-tip">
+              <text>脂肪</text>
+              <text>34%</text>
+            </view>
+
+            <slider
+              value="60"
+              activeColor="#FFD78F"
+              backgroundColor="#FFD78F15"
+              :block-size="20"
+              :min="0"
+              :max="100"
+              :step="1"
+            />
+          </view>
+        </view>
+
+        <view class="submit">
+          <text>确认修改</text>
         </view>
       </view>
 
@@ -111,6 +176,12 @@
         </view>
       </view>
     </view>
+
+    <image
+      class="add-recode"
+      mode="widthFix"
+      src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/add-icon.png"
+    />
   </view>
 </template>
 
@@ -123,7 +194,7 @@ export default {
   data() {
     return {
       dateList: [],
-      reocedList: [
+      recodeList: [
         {
           icon: 'https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/food-icon1.png',
           text: '早餐',
@@ -150,6 +221,7 @@ export default {
           active: false,
         },
       ],
+      modify: false,
     };
   },
 
@@ -236,7 +308,7 @@ page {
   }
 
   .container {
-    padding: 22rpx 30rpx 100rpx;
+    padding: 22rpx 30rpx 140rpx;
 
     .manage {
       background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/recode-bg1.png') left top/100%
@@ -297,7 +369,16 @@ page {
       background: #ffffff;
       padding: 30rpx 32rpx 44rpx;
       border-radius: 20rpx;
+      position: relative;
       margin-bottom: 20rpx;
+
+      .toggle-btn {
+        position: absolute;
+        top: 20rpx;
+        right: 30rpx;
+        font-size: 28rpx;
+        color: #b88646;
+      }
 
       .title {
         font-size: 30rpx;
@@ -374,6 +455,84 @@ page {
               color: #999999;
             }
           }
+        }
+      }
+    }
+
+    .modify-ratio {
+      background: #ffffff;
+      padding: 30rpx 32rpx 44rpx;
+      border-radius: 20rpx;
+      position: relative;
+      margin-bottom: 20rpx;
+
+      .toggle-btn {
+        position: absolute;
+        top: 20rpx;
+        right: 30rpx;
+        font-size: 28rpx;
+        color: #b88646;
+      }
+
+      .title {
+        font-size: 30rpx;
+        color: #1a1a1a;
+        margin-bottom: 62rpx;
+      }
+
+      .ratio-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30rpx;
+        margin-bottom: 54rpx;
+
+        .ratio-item {
+          display: flex;
+          flex-direction: column;
+
+          .ratio-tip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20rpx;
+            margin-bottom: 10rpx;
+
+            text {
+              &:nth-child(1) {
+                font-size: 26rpx;
+                color: #666666;
+              }
+
+              &:nth-child(2) {
+                font-size: 22rpx;
+                color: #999999;
+              }
+            }
+          }
+
+          slider {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+
+      .submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text {
+          width: 550rpx;
+          height: 80rpx;
+          background: #78f788;
+          border-radius: 40rpx;
+          font-size: 28rpx;
+          color: #111111;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -504,6 +663,13 @@ page {
         }
       }
     }
+  }
+
+  .add-recode {
+    position: fixed;
+    bottom: 0;
+    right: 10rpx;
+    width: 124rpx;
   }
 }
 </style>
