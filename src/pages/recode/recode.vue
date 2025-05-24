@@ -383,6 +383,7 @@ page {
       .title {
         font-size: 30rpx;
         color: #1a1a1a;
+        font-weight: 500;
         margin-bottom: 20rpx;
       }
 
@@ -441,6 +442,7 @@ page {
             &:nth-child(1) {
               font-size: 26rpx;
               color: #333333;
+              font-weight: 500;
               margin-right: 6rpx;
             }
 
@@ -477,6 +479,7 @@ page {
       .title {
         font-size: 30rpx;
         color: #1a1a1a;
+        font-weight: 500;
         margin-bottom: 62rpx;
       }
 
@@ -558,6 +561,7 @@ page {
           .title {
             font-size: 30rpx;
             color: #1a1a1a;
+            font-weight: 500;
             margin-bottom: 18rpx;
           }
 
@@ -599,6 +603,7 @@ page {
           .title {
             font-size: 30rpx;
             color: #1a1a1a;
+            font-weight: 500;
             margin-bottom: 37rpx;
           }
 
@@ -616,6 +621,7 @@ page {
                 &:nth-child(1) {
                   color: #333333;
                   font-size: 26rpx;
+                  font-weight: 500;
                   margin-right: 10rpx;
                 }
 

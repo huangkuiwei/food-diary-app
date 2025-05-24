@@ -331,6 +331,7 @@ export default {
           .add-text {
             font-size: 28rpx;
             color: #111111;
+            font-size: 500;
           }
 
           .tip {
@@ -436,6 +437,8 @@ export default {
     }
 
     .ai-list {
+      font-weight: 500;
+
       .item1 {
         display: flex;
         align-items: center;

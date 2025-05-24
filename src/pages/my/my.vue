@@ -62,7 +62,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon01.png"
           />
-          <text>我的数据</text>
+          <text class="nav-title">我的数据</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
@@ -71,7 +71,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon02.png"
           />
-          <text>数据报告</text>
+          <text class="nav-title">数据报告</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
@@ -80,7 +80,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon03.png"
           />
-          <text>提醒设置</text>
+          <text class="nav-title">提醒设置</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
@@ -89,7 +89,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon04.png"
           />
-          <text>兑换码</text>
+          <text class="nav-title">兑换码</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
@@ -98,7 +98,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon05.png"
           />
-          <text>意见和反馈</text>
+          <text class="nav-title">意见和反馈</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
@@ -107,7 +107,7 @@
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon06.png"
           />
-          <text>联系客服</text>
+          <text class="nav-title">联系客服</text>
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
       </view>
@@ -218,6 +218,7 @@ page {
         .data-title {
           font-size: 28rpx;
           color: #1a1a1a;
+          font-weight: 500;
         }
 
         .number {
@@ -277,7 +278,7 @@ page {
           margin-right: 20rpx;
         }
 
-        text {
+        .nav-title {
           font-weight: 500;
           font-size: 26rpx;
           color: #1a1a1a;
