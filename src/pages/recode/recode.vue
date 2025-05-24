@@ -78,7 +78,7 @@
       </view>
 
       <view class="modify-ratio" v-else>
-        <view class="toggle-btn" @click="modify = !modify">修改碳蛋腊比例</view>
+        <view class="toggle-btn" @click="modify = !modify">每日饮食记录</view>
 
         <view class="title">修改碳蛋脂比例</view>
 

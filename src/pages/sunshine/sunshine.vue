@@ -20,6 +20,7 @@
       <image
         class="rule-icon"
         mode="widthFix"
+        @click="openRuleDialog"
         src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/sunshine/rule-icon.png"
       />
 
@@ -34,6 +35,7 @@
 
       <image
         class="recode-icon"
+        @click="openRecodeDialog"
         mode="widthFix"
         src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/sunshine/recode-icon.png"
       />
@@ -99,12 +101,23 @@
         </view>
       </view>
     </view>
+
+    <rule-dialog ref="ruleDialog" />
+    <recode-dialog ref="recodeDialog" />
   </view>
 </template>
 
 <script>
+import RuleDialog from '@/pages/sunshine/ruleDialog.vue';
+import RecodeDialog from '@/pages/sunshine/recodeDialog.vue';
+
 export default {
   name: 'sunshinePage',
+
+  components: {
+    RecodeDialog,
+    RuleDialog,
+  },
 
   data() {
     return {
@@ -178,6 +191,16 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    openRuleDialog() {
+      this.$refs.ruleDialog.open();
+    },
+
+    openRecodeDialog() {
+      this.$refs.recodeDialog.open();
+    },
   },
 };
 </script>
