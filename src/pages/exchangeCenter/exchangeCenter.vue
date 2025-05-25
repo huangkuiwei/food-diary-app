@@ -133,7 +133,7 @@ export default {
       .back {
         position: absolute;
         top: -2rpx;
-        left: 30rpx;
+        left: 15rpx;
       }
     }
 
