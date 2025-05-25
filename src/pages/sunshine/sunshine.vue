@@ -42,6 +42,7 @@
 
       <image
         class="exchange-icon"
+        @click="goExchangeCenter"
         mode="widthFix"
         src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/sunshine/exchange-icon.png"
       />
@@ -200,6 +201,12 @@ export default {
 
     openRecodeDialog() {
       this.$refs.recodeDialog.open();
+    },
+
+    goExchangeCenter() {
+      uni.navigateTo({
+        url: '/pages/exchangeCenter/exchangeCenter',
+      });
     },
   },
 };

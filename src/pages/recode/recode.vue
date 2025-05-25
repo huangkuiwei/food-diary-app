@@ -531,6 +531,7 @@ page {
           height: 80rpx;
           background: #78f788;
           border-radius: 40rpx;
+          font-weight: 500;
           font-size: 28rpx;
           color: #111111;
           display: flex;
