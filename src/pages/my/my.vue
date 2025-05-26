@@ -11,7 +11,7 @@
               mode="widthFix"
               src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/edit-icon.png"
             />
-            <text class="edit">编辑资料</text>
+            <text class="edit" @click="goUserCenter">编辑资料</text>
           </view>
 
           <view class="time">会员到期：2025-06-30</view>
@@ -84,7 +84,7 @@
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
-        <view class="nav-item">
+        <view class="nav-item" @click="showRedemptionDialog">
           <image
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon04.png"
@@ -112,12 +112,32 @@
         </view>
       </view>
     </view>
+
+    <redemption-dialog ref="redemptionDialog" />
   </view>
 </template>
 
 <script>
+import RedemptionDialog from '@/pages/my/redemptionDialog.vue';
+
 export default {
   name: 'myPage',
+
+  components: {
+    RedemptionDialog,
+  },
+
+  methods: {
+    goUserCenter() {
+      uni.navigateTo({
+        url: '/pages/userCenter/userCenter',
+      });
+    },
+
+    showRedemptionDialog() {
+      this.$refs.redemptionDialog.open();
+    },
+  },
 };
 </script>
 

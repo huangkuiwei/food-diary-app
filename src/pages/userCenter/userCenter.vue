@@ -13,68 +13,138 @@
     <view class="userinfo">
       <view class="box">
         <view class="item">
-          <text>性别</text>
+          <text class="label">性别</text>
 
-          <picker @change="bindPickerChange" :value="index" :range="genderList">
-            <view class="uni-input">{{ array[index] }}</view>
+          <picker
+            mode="selector"
+            :range="genderList"
+            :value="userInfo.gender"
+            @change="userInfo.gender = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ genderList[userInfo.gender] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
           </picker>
-
-          <text>女</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
         </view>
 
         <view class="item">
-          <text>出生年月</text>
-          <text>2022-11-08</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+          <text class="label">出生年月</text>
+
+          <picker mode="date" :value="userInfo.date" @change="userInfo.date = $event.detail.value">
+            <view class="value">
+              <text class="filed">{{ userInfo.date }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
         </view>
 
         <view class="item">
-          <text>身高</text>
-          <text>165厘米</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+          <text class="label">身高</text>
+
+          <picker
+            mode="selector"
+            :range="genderList"
+            :value="userInfo.gender"
+            @change="userInfo.gender = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ genderList[userInfo.gender] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
         </view>
 
         <view class="item">
-          <text>当前体重</text>
-          <text>49.00公斤</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
-        </view>
-      </view>
+          <text class="label">当前体重</text>
 
-      <view class="box">
-        <view class="item">
-          <text>初始体重</text>
-          <text>49.00公斤</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
-        </view>
-
-        <view class="item">
-          <text>初始日期</text>
-          <text>2025-01-08</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
-        </view>
-      </view>
-
-      <view class="box">
-        <view class="item">
-          <text> 目标体重</text>
-          <text>46.00公斤</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
-        </view>
-
-        <view class="item">
-          <text>减重达成时间</text>
-          <text>15周 2025-01-08</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+          <picker
+            mode="selector"
+            :range="genderList"
+            :value="userInfo.gender"
+            @change="userInfo.gender = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ genderList[userInfo.gender] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
         </view>
       </view>
 
       <view class="box">
         <view class="item">
-          <text>运动习惯</text>
-          <text>几乎不动</text>
-          <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+          <text class="label">初始体重</text>
+
+          <picker
+            mode="selector"
+            :range="genderList"
+            :value="userInfo.gender"
+            @change="userInfo.gender = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ genderList[userInfo.gender] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
+        </view>
+
+        <view class="item">
+          <text class="label">初始日期</text>
+
+          <picker mode="date" :value="userInfo.date" @change="userInfo.date = $event.detail.value">
+            <view class="value">
+              <text class="filed">{{ userInfo.date }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="box">
+        <view class="item">
+          <text class="label">目标体重</text>
+
+          <picker
+            mode="selector"
+            :range="genderList"
+            :value="userInfo.gender"
+            @change="userInfo.gender = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ genderList[userInfo.gender] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
+        </view>
+
+        <view class="item">
+          <text class="label">减重达成时间</text>
+
+          <picker mode="date" :value="userInfo.date" @change="userInfo.date = $event.detail.value">
+            <view class="value">
+              <text class="filed">{{ userInfo.date }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="box">
+        <view class="item">
+          <text class="label">运动习惯</text>
+
+          <picker
+            mode="selector"
+            :range="habitList"
+            :value="userInfo.habit"
+            @change="userInfo.habit = $event.detail.value"
+          >
+            <view class="value">
+              <text class="filed">{{ habitList[userInfo.habit] }}</text>
+              <uni-icons class="back" color="#999999" type="right" size="18"></uni-icons>
+            </view>
+          </picker>
         </view>
       </view>
     </view>
@@ -87,7 +157,13 @@ export default {
 
   data() {
     return {
+      userInfo: {
+        gender: 0,
+        date: '2000-01-01',
+        habit: 0,
+      },
       genderList: ['男', '女'],
+      habitList: ['几乎不动，长时间久坐', '偶尔活动，每周1-3天', '经常活动，每周3-5天'],
     };
   },
 
@@ -146,17 +222,22 @@ page {
           border-bottom: 1px solid #f6f7fb;
         }
 
-        text {
-          &:nth-child(1) {
-            font-size: 28rpx;
-            color: #1a1a1a;
-            flex-grow: 1;
-          }
+        .label {
+          font-size: 28rpx;
+          color: #1a1a1a;
+          flex-grow: 1;
+        }
 
-          &:nth-child(2) {
-            font-size: 26rpx;
-            color: #666666;
-            margin-right: 10rpx;
+        picker {
+          .value {
+            display: flex;
+            align-items: center;
+
+            .filed {
+              font-size: 26rpx;
+              color: #666666;
+              margin-right: 10rpx;
+            }
           }
         }
       }
