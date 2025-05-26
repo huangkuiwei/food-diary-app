@@ -40,7 +40,7 @@
           </view>
         </view>
 
-        <view class="item">
+        <view class="item" @click="jump('/pages/weightData/weightData')">
           <view class="data-title">体重数据</view>
           <view class="number">
             <text>5.00</text>
