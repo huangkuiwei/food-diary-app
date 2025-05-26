@@ -11,7 +11,7 @@
               mode="widthFix"
               src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/edit-icon.png"
             />
-            <text class="edit" @click="goUserCenter">编辑资料</text>
+            <text class="edit" @click="jump('/pages/userCenter/userCenter')">编辑资料</text>
           </view>
 
           <view class="time">会员到期：2025-06-30</view>
@@ -22,7 +22,7 @@
         </view>
       </view>
 
-      <view class="vip-icon">
+      <view class="vip-icon" @click="jump('/pages/vip/vip')">
         <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/vip-icon.png" />
       </view>
 
@@ -128,9 +128,9 @@ export default {
   },
 
   methods: {
-    goUserCenter() {
+    jump(url) {
       uni.navigateTo({
-        url: '/pages/userCenter/userCenter',
+        url: url,
       });
     },
 
