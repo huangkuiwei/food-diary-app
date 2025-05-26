@@ -26,7 +26,7 @@
         <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/vip-icon.png" />
       </view>
 
-      <view class="data">
+      <view class="data" @click="jump('/pages/dataStatistics/dataStatistics')">
         <view class="item">
           <view class="data-title">数据统计</view>
           <view class="number">
