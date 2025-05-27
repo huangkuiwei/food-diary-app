@@ -57,7 +57,7 @@
 
     <view class="nav-container">
       <view class="nav">
-        <view class="nav-item">
+        <view class="nav-item" @click="jump('/pages/userCenter/userCenter')">
           <image
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon01.png"
