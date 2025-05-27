@@ -275,7 +275,8 @@ page {
             }
 
             &:nth-child(2) {
-              background: #c8f370;
+              background: #0abf92;
+              color: #ffffff;
               border-radius: 50%;
               display: flex;
               align-items: center;
@@ -347,20 +348,20 @@ page {
             &:nth-child(1) {
               font-weight: bold;
               font-size: 36rpx;
-              color: #111111;
+              color: #ffffff;
               margin-bottom: 24rpx;
             }
 
             &:nth-child(2) {
               font-size: 26rpx;
-              color: #111111;
+              color: #ffffff;
             }
           }
         }
 
         .line {
           align-self: stretch;
-          border-right: 2px dashed #111111;
+          border-right: 2px dashed #ffffff;
         }
       }
     }
@@ -416,7 +417,7 @@ page {
           .line {
             width: 60rpx;
             height: 5rpx;
-            background: #78f788;
+            background: #0abf92;
             border-radius: 3rpx;
           }
         }
@@ -529,11 +530,11 @@ page {
         text {
           width: 550rpx;
           height: 80rpx;
-          background: #78f788;
+          background: #0abf92;
           border-radius: 40rpx;
           font-weight: 500;
           font-size: 28rpx;
-          color: #111111;
+          color: #ffffff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -644,13 +645,13 @@ page {
             align-self: center;
             width: 212rpx;
             height: 48rpx;
-            background: #78f788;
+            background: #0abf92;
             border-radius: 24rpx;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24rpx;
-            color: #333333;
+            color: #ffffff;
           }
         }
 

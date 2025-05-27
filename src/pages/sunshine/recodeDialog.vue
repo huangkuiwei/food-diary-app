@@ -112,7 +112,8 @@ export default {
     text {
       width: 284rpx;
       height: 80rpx;
-      background: #78f788;
+      background: #0abf92;
+      color: #ffffff;
       border-radius: 40rpx;
       display: flex;
       align-items: center;

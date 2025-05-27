@@ -153,7 +153,7 @@ page {
 
   .banner {
     padding: calc(var(--status-bar-height) + 60rpx) 30rpx 22rpx;
-    background: linear-gradient(180deg, rgba(182, 239, 63, 0.9) 0%, rgba(243, 255, 217, 0.95) 54%, #f6f7fb 100%);
+    background: linear-gradient(180deg, rgba(204, 255, 238, 0.9) 0%, #f6f7fb 100%);
 
     .title {
       text-align: center;
@@ -248,7 +248,7 @@ page {
           text {
             &:nth-child(1) {
               font-size: 34rpx;
-              color: #78f788;
+              color: #0abf92;
               margin-right: 6rpx;
             }
 

@@ -92,13 +92,13 @@ export default {
 
       &:nth-child(1) {
         background: #ffffff;
-        border: 2px solid #78f788;
-        color: #78f788;
+        border: 2px solid #0abf92;
+        color: #0abf92;
       }
 
       &:nth-child(2) {
-        background: #78f788;
-        color: #111111;
+        background: #0abf92;
+        color: #ffffff;
       }
     }
   }

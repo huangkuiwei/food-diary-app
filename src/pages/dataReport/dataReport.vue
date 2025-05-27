@@ -223,7 +223,7 @@ page {
         right: 0;
         bottom: -2rpx;
         height: 12rpx;
-        background: #78f788;
+        background: #0abf92;
         border-radius: 6rpx;
       }
     }
@@ -278,7 +278,7 @@ page {
               top: 0;
               width: 10rpx;
               height: 26rpx;
-              background: #78f788;
+              background: #0abf92;
               border-radius: 5rpx;
             }
           }

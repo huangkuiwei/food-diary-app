@@ -68,7 +68,7 @@ export default {
       &:nth-child(2) {
         width: 120rpx;
         height: 6rpx;
-        background: #78f788;
+        background: #0abf92;
         border-radius: 5rpx;
       }
     }

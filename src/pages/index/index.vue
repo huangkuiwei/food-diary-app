@@ -154,11 +154,11 @@ export default {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   offset: 0,
-                  color: '#C2F25E', // 起始颜色
+                  color: '#0ABF92', // 起始颜色
                 },
                 {
                   offset: 1,
-                  color: '#E4F9BC', // 结束颜色
+                  color: '#9AE9CC', // 结束颜色
                 },
               ]),
               shadowColor: 'transparent',
@@ -178,7 +178,7 @@ export default {
               roundCap: true,
               lineStyle: {
                 width: 16,
-                color: [[1, '#E5FCB9']],
+                color: [[1, '#9AE9CC']],
               },
             },
             radius: '100%',
@@ -381,20 +381,22 @@ export default {
           bottom: 0;
           width: 96rpx;
           height: 50rpx;
-          background: #c8f370;
           border-radius: 25rpx;
           font-size: 28rpx;
-          color: #111111;
           display: flex;
           align-items: center;
           justify-content: center;
 
           &.current {
             left: 0;
+            color: #111111;
+            background: #9ae9cc;
           }
 
           &.target {
             right: 0;
+            color: #ffffff;
+            background: #0abf92;
           }
         }
       }

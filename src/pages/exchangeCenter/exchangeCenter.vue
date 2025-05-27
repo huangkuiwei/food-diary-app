@@ -120,7 +120,7 @@ export default {
 .exchange-center-page {
   .banner {
     padding: calc(var(--status-bar-height) + 60rpx) 0 0;
-    background: linear-gradient(90deg, #f5f6d6 0%, #f4f6ea 51%, #ebf8cc 100%);
+    background: linear-gradient(90deg, rgba(206, 238, 250, 0.9) 0%, #e0fae9 100%);
 
     .title {
       text-align: center;
@@ -149,7 +149,7 @@ export default {
         .points-title {
           font-weight: 500;
           font-size: 32rpx;
-          color: #111111;
+          color: #ffffff;
           margin-bottom: 38rpx;
         }
 
@@ -170,7 +170,7 @@ export default {
 
             text {
               font-size: 24rpx;
-              color: #111111;
+              color: #ffffff;
             }
           }
         }
@@ -186,14 +186,14 @@ export default {
 
           .tip {
             font-size: 26rpx;
-            color: #111111;
+            color: #ffffff;
             flex-grow: 1;
           }
 
           .go-sign-in {
             width: 140rpx;
             height: 60rpx;
-            background: #a4dd2b;
+            background: #0abf92;
             border-radius: 25rpx;
             font-size: 30rpx;
             color: #ffffff;

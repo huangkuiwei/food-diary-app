@@ -14,7 +14,7 @@
           <view class="left">
             <image
               mode="widthFix"
-              src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/edit-icon.png"
+              src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/head01.png"
             />
           </view>
 
@@ -125,7 +125,7 @@ export default {
 .vip-page {
   .banner {
     padding: calc(var(--status-bar-height) + 60rpx) 0 0;
-    background: linear-gradient(90deg, #f5f6d6 0%, #f4f6ea 51%, #ebf8cc 100%);
+    background: linear-gradient(90deg, rgba(206, 238, 250, 0.9) 0%, #e0fae9 100%);
 
     .title {
       text-align: center;
@@ -172,12 +172,12 @@ export default {
             &:nth-child(1) {
               font-weight: bold;
               font-size: 32rpx;
-              color: #1a1a1a;
+              color: #ffffff;
             }
 
             &:nth-child(2) {
               font-size: 24rpx;
-              color: #1a1a1a;
+              color: #ffffff;
             }
           }
         }
@@ -331,11 +331,11 @@ export default {
     .btn {
       width: 592rpx;
       height: 103rpx;
-      background: #78f788;
+      background: #0abf92;
       border-radius: 52rpx;
       font-weight: 500;
       font-size: 32rpx;
-      color: #111111;
+      color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;

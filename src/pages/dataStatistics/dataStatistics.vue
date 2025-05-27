@@ -113,7 +113,7 @@ export default {
             name: '运动量',
             type: 'bar',
             data: [100, 100, 100, 100, 100, 100, 100],
-            color: '#78F788',
+            color: '#0ABF92',
           },
         ],
       },
@@ -170,7 +170,7 @@ export default {
               show: true,
               formatter: '{b}',
             },
-            color: '#78F788',
+            color: '#0ABF92',
             data: [
               { value: -200 },
               { value: -300 },
@@ -266,7 +266,7 @@ page {
         right: 0;
         bottom: -2rpx;
         height: 12rpx;
-        background: #78f788;
+        background: #0abf92;
         border-radius: 6rpx;
       }
     }
