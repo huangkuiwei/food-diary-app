@@ -23,7 +23,7 @@
         <view class="chart-item1">
           <view class="chart-title">
             <text>初始BMI值为：23.44</text>
-            <text>历史记录</text>
+            <text @click="jump('/pages/historyPlan/historyPlan')">历史记录</text>
           </view>
 
           <view class="chart-tip">
@@ -84,6 +84,36 @@
             </view>
           </view>
         </view>
+      </view>
+
+      <view class="plan-item motion-plan">
+        <view class="plan-name">定制化运动方案</view>
+
+        <view class="no-permission">
+          <image
+            mode="widthFix"
+            src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/weightManagementPlan/lock.png"
+          />
+
+          <text>会员专享</text>
+        </view>
+      </view>
+
+      <view class="plan-item life-plan">
+        <view class="plan-name">定制化生活方案</view>
+
+        <view class="no-permission">
+          <image
+            mode="widthFix"
+            src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/weightManagementPlan/lock.png"
+          />
+
+          <text>会员专享</text>
+        </view>
+      </view>
+
+      <view class="unlock">
+        <text @click="jump('/pages/vip/vip')">解锁会员体验更多功能</text>
       </view>
     </view>
   </view>
@@ -189,6 +219,12 @@ export default {
   methods: {
     back() {
       uni.navigateBack();
+    },
+
+    jump(url) {
+      uni.navigateTo({
+        url: url,
+      });
     },
   },
 };
@@ -395,6 +431,7 @@ page {
       align-self: stretch;
       background: #ffffff;
       border-radius: 20rpx;
+      margin-bottom: 20rpx;
 
       .cookbook-title {
         font-weight: 500;
@@ -475,6 +512,60 @@ page {
             }
           }
         }
+      }
+    }
+
+    .plan-item {
+      align-self: stretch;
+      background: #ffffff;
+      border-radius: 20rpx;
+      padding: 40rpx 25rpx;
+      margin-bottom: 20rpx;
+
+      &.life-plan {
+        margin-bottom: 30rpx;
+      }
+
+      .plan-name {
+        font-weight: 500;
+        font-size: 28rpx;
+        color: #1a1a1a;
+      }
+
+      .no-permission {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50rpx 0;
+
+        image {
+          width: 60rpx;
+          margin-bottom: 20rpx;
+        }
+
+        text {
+          font-size: 26rpx;
+          color: #333333;
+        }
+      }
+    }
+
+    .unlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text {
+        width: 590rpx;
+        height: 100rpx;
+        background: #0abf92;
+        border-radius: 50rpx;
+        font-size: 32rpx;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

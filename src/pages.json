@@ -194,6 +194,21 @@
           "softinputMode": "adjustResize"
         }
       }
+    },
+    {
+      "path": "pages/historyPlan/historyPlan",
+      "style": {
+        "navigationStyle": "custom",
+        // #ifndef H5
+        "navigationBarTitleText": "历史方案",
+        // #endif
+        "h5": {
+          "titleNView": false
+        },
+        "app-plus": {
+          "softinputMode": "adjustResize"
+        }
+      }
     }
   ],
   "tabBar": {
