@@ -56,7 +56,7 @@
       </view>
     </view>
 
-    <view class="get-way-btn">
+    <view class="get-way-btn" @click="jump('/pages/weightManagementPlan/weightManagementPlan')">
       <image mode="widthFix" src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/home/get-way-btn.png" />
     </view>
 
@@ -215,6 +215,12 @@ export default {
       // chart 图表实例不能存在data里
       const chart = await this.$refs.chartRef.init(echarts);
       chart.setOption(this.option);
+    },
+
+    jump(url) {
+      uni.navigateTo({
+        url: url,
+      });
     },
   },
 };

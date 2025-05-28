@@ -170,7 +170,22 @@
       "style": {
         "navigationStyle": "custom",
         // #ifndef H5
-        "navigationBarTitleText": "意见反馈",
+        "navigationBarTitleText": "登录",
+        // #endif
+        "h5": {
+          "titleNView": false
+        },
+        "app-plus": {
+          "softinputMode": "adjustResize"
+        }
+      }
+    },
+    {
+      "path": "pages/weightManagementPlan/weightManagementPlan",
+      "style": {
+        "navigationStyle": "custom",
+        // #ifndef H5
+        "navigationBarTitleText": "体重管理方案",
         // #endif
         "h5": {
           "titleNView": false
