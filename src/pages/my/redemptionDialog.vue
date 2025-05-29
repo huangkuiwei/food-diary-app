@@ -2,12 +2,12 @@
   <custom-dialog ref="redemptionDialog" title="兑换码" :shop-close="false">
     <view class="content">
       <view class="input-box">
-        <input v-model="code" placeholder="请复制兑换码" />
+        <input :value="code" @input="code = $event.detail.value" placeholder="请复制兑换码" />
 
         <view class="options">
-          <text>粘贴兑换码</text>
+          <text @click="pasteCode">粘贴兑换码</text>
           <text class="line">|</text>
-          <text>获取兑换码</text>
+          <text @click="getCode">获取兑换码</text>
         </view>
       </view>
 
@@ -32,6 +32,8 @@ export default {
   data() {
     return {
       code: undefined,
+      clipboardData: undefined,
+      hasGetClipboardData: false,
     };
   },
 
@@ -42,6 +44,38 @@ export default {
 
     close() {
       this.$refs.redemptionDialog.close();
+    },
+
+    getCode() {
+      wx.getClipboardData({
+        success: (res) => {
+          this.hasGetClipboardData = true;
+          this.clipboardData = res.data;
+        },
+      });
+    },
+
+    pasteCode() {
+      if (!this.hasGetClipboardData) {
+        uni.showToast({
+          title: '请先获取兑换码',
+          icon: 'none',
+          mask: true,
+        });
+
+        return;
+      }
+
+      uni.showModal({
+        content: '立即粘贴文案',
+        cancelColor: '#333333',
+        confirmColor: '#0ABF92',
+        success: (res) => {
+          if (res.confirm) {
+            this.code = this.clipboardData;
+          }
+        },
+      });
     },
 
     submit() {},

@@ -209,6 +209,36 @@
           "softinputMode": "adjustResize"
         }
       }
+    },
+    {
+      "path": "pages/setReminder/setReminder",
+      "style": {
+        "navigationStyle": "custom",
+        // #ifndef H5
+        "navigationBarTitleText": "设置提醒",
+        // #endif
+        "h5": {
+          "titleNView": false
+        },
+        "app-plus": {
+          "softinputMode": "adjustResize"
+        }
+      }
+    },
+    {
+      "path": "pages/evaluation/evaluation",
+      "style": {
+        "navigationStyle": "custom",
+        // #ifndef H5
+        "navigationBarTitleText": "测评",
+        // #endif
+        "h5": {
+          "titleNView": false
+        },
+        "app-plus": {
+          "softinputMode": "adjustResize"
+        }
+      }
     }
   ],
   "tabBar": {
@@ -224,20 +254,20 @@
       {
         "pagePath": "pages/recode/recode",
         "text": "记录",
-        "iconPath": "static/tabBar/home.png",
-        "selectedIconPath": "static/tabBar/home1.png"
+        "iconPath": "static/tabBar/recode.png",
+        "selectedIconPath": "static/tabBar/recode1.png"
       },
       {
         "pagePath": "pages/sunshine/sunshine",
         "text": "攒阳光",
-        "iconPath": "static/tabBar/home.png",
-        "selectedIconPath": "static/tabBar/home1.png"
+        "iconPath": "static/tabBar/sunshine.png",
+        "selectedIconPath": "static/tabBar/sunshine1.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "static/tabBar/home.png",
-        "selectedIconPath": "static/tabBar/home1.png"
+        "iconPath": "static/tabBar/my.png",
+        "selectedIconPath": "static/tabBar/my1.png"
       }
     ]
   },

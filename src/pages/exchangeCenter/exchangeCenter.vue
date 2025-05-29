@@ -39,7 +39,7 @@
               src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/exchangeCenter/icon3.png"
             />
             <text class="tip">连续签到第3天，明日签到阳光+10</text>
-            <text class="go-sign-in">去签到</text>
+            <text class="go-sign-in" @click="goSignIn">去签到</text>
           </view>
         </view>
       </view>
@@ -111,6 +111,11 @@ export default {
   methods: {
     back() {
       uni.navigateBack();
+    },
+
+    goSignIn() {
+      uni.setStorageSync('goSignIn', true);
+      this.back();
     },
   },
 };

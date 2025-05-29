@@ -194,6 +194,19 @@ export default {
     };
   },
 
+  onShow() {
+    let goSignIn = uni.getStorageSync('goSignIn');
+
+    if (goSignIn) {
+      uni.removeStorageSync('goSignIn');
+
+      uni.pageScrollTo({
+        scrollTop: 300,
+        duration: 300,
+      });
+    }
+  },
+
   methods: {
     openRuleDialog() {
       this.$refs.ruleDialog.open();

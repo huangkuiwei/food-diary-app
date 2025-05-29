@@ -78,8 +78,8 @@
       </view>
 
       <view class="plan">
-        <view class="btn1">查看计划</view>
-        <view class="btn2">+更新最新体重</view>
+        <view class="btn1" @click="previewPlan">查看计划</view>
+        <view class="btn2" @click="updateWeightData">+更新最新体重</view>
       </view>
 
       <view class="chart2-box">
@@ -98,6 +98,23 @@
         </view>
       </view>
     </view>
+
+    <uni-popup ref="updateWeightDataDialog">
+      <view class="update-weight-data-dialog">
+        <view class="title">更新最新体重</view>
+
+        <view class="input-box">
+          <input type="text" />
+          <text>公斤</text>
+        </view>
+
+        <view class="submit">确定</view>
+
+        <view class="close" @click="$refs.updateWeightDataDialog.close()">
+          <uni-icons class="back" color="#999999" type="closeempty" size="24"></uni-icons>
+        </view>
+      </view>
+    </uni-popup>
   </view>
 </template>
 
@@ -241,6 +258,8 @@ export default {
     };
   },
 
+  onLoad() {},
+
   methods: {
     async init1() {
       const chart = await this.$refs.chart1Ref.init(echarts);
@@ -259,6 +278,16 @@ export default {
 
     back() {
       uni.navigateBack();
+    },
+
+    previewPlan() {
+      uni.navigateTo({
+        url: '/pages/weightManagementPlan/weightManagementPlan',
+      });
+    },
+
+    updateWeightData() {
+      this.$refs.updateWeightDataDialog.open();
     },
   },
 };
@@ -476,6 +505,67 @@ page {
         border-radius: 20rpx;
         padding: 50rpx 20rpx;
       }
+    }
+  }
+
+  .update-weight-data-dialog {
+    background: #ffffff;
+    width: 589rpx;
+    border-radius: 30rpx;
+    padding: 40rpx 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .title {
+      font-weight: 500;
+      font-size: 32rpx;
+      color: #111111;
+      margin-bottom: 50rpx;
+    }
+
+    .input-box {
+      width: 410rpx;
+      height: 103rpx;
+      background: #ffffff;
+      border-radius: 20rpx;
+      border: 2px solid #f4f4f4;
+      display: flex;
+      align-items: center;
+      color: #111111;
+      margin-bottom: 50rpx;
+
+      input {
+        font-weight: 500;
+        width: 260rpx;
+        font-size: 48rpx;
+        text-align: center;
+      }
+
+      text {
+        flex-grow: 1;
+        font-size: 30rpx;
+      }
+    }
+
+    .submit {
+      width: 410rpx;
+      height: 90rpx;
+      background: #0abf92;
+      border-radius: 45rpx;
+      font-size: 30rpx;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close {
+      position: absolute;
+      right: 20rpx;
+      top: 30rpx;
     }
   }
 }
