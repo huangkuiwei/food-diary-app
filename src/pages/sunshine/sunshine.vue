@@ -227,11 +227,11 @@ export default {
 
 <style scoped lang="scss">
 .sunshine-page {
+  background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/sunshine/bg.png') left top/100% auto
+    no-repeat;
+
   .banner {
     padding: calc(var(--status-bar-height) + 60rpx) 0 74rpx;
-    // TODO 背景更换
-    background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/home/banner-bg.png') left top/100% auto
-      no-repeat;
     position: relative;
 
     .title {

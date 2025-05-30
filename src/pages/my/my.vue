@@ -75,7 +75,7 @@
           <uni-icons color="#999999" type="right" size="14"></uni-icons>
         </view>
 
-        <view class="nav-item">
+        <view class="nav-item" @click="jump('/pages/setReminder/setReminder')">
           <image
             mode="widthFix"
             src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/nav-icon03.png"

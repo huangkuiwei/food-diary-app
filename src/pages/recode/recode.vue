@@ -367,7 +367,8 @@ page {
     }
 
     .recode-box {
-      background: #ffffff;
+      background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/reocde-box-bg.png') left
+        top/100% 100% no-repeat;
       padding: 30rpx 32rpx 44rpx;
       border-radius: 20rpx;
       position: relative;
@@ -463,7 +464,8 @@ page {
     }
 
     .modify-ratio {
-      background: #ffffff;
+      background: url('https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/reocde-box-bg.png') left
+        top/100% 100% no-repeat;
       padding: 30rpx 32rpx 44rpx;
       border-radius: 20rpx;
       position: relative;
