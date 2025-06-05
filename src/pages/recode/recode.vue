@@ -172,24 +172,36 @@
 
           <view class="total">总消耗2400千卡</view>
 
-          <view class="add">+</view>
+          <view class="add" @click="$refs.addMotionRecodeDialog.open()">+</view>
         </view>
       </view>
     </view>
 
     <image
+      @click="$refs.addFoodRecodeDialog.open()"
       class="add-recode"
       mode="widthFix"
       src="https://hnenjoy.oss-cn-shanghai.aliyuncs.com/food-diary-app/recode/add-icon.png"
     />
+
+    <add-motion-recode-dialog ref="addMotionRecodeDialog" />
+
+    <add-food-recode-dialog ref="addFoodRecodeDialog" />
   </view>
 </template>
 
 <script>
 import { getRecentWeekDates } from '@/utils';
+import AddMotionRecodeDialog from '@/pages/recode/addMotionRecodeDialog.vue';
+import AddFoodRecodeDialog from '@/pages/recode/addFoodRecodeDialog.vue';
 
 export default {
   name: 'recodePage',
+
+  components: {
+    AddFoodRecodeDialog,
+    AddMotionRecodeDialog,
+  },
 
   data() {
     return {
